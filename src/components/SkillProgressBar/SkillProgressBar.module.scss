@@ -1,0 +1,94 @@
+@use 'sass:color';
+@use '../../styles/variables' as vars;
+
+.skillProgressBar {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-weight: 600;
+  margin: 0;
+  color: vars.$heading-color;
+}
+
+.percentage {
+  font-weight: 600;
+  color: vars.$heading-color;
+  transition: color 0.3s ease;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 8px;
+  background-color: vars.$border-color;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, vars.$primary-color, color.adjust(vars.$primary-color, $lightness: 15%));
+  border-radius: 10px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  position: relative;
+  box-shadow: 0 0 5px rgba(vars.$primary-color, 0.5);
+  
+  &.animate {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shimmer 2s infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  color: vars.$text-color;
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 14px;
+  color: vars.$text-color-light;
+  line-height: 1.4;
+} 

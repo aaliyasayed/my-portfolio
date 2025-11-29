@@ -1,0 +1,39 @@
+{
+  "name": "aaliyasayed",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
+  "scripts": {
+    "preinstall": "node -e \"if (process.versions.node.split('.')[0] < 20) { console.error('\\x1b[31mRequires Node.js version 20\\x1b[0m'); process.exit(1); }\"",
+    "dev": "node -e \"if (process.versions.node.split('.')[0] < 20) { console.error('\\x1b[31mRequires Node.js version 20\\x1b[0m'); process.exit(1); }\" && vite",
+    "build": "node -e \"if (process.versions.node.split('.')[0] < 20) { console.error('\\x1b[31mRequires Node.js version 20\\x1b[0m'); process.exit(1); }\" && tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "node -e \"if (process.versions.node.split('.')[0] < 20) { console.error('\\x1b[31mRequires Node.js version 20\\x1b[0m'); process.exit(1); }\" && vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@getbrevo/brevo": "^2.2.0",
+    "classnames": "^2.5.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "sass": "^1.87.0",
+    "terser": "^5.39.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1"
+  }
+}

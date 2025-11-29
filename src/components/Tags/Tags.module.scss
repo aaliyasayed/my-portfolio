@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+// Tag styles
+.tag {
+  display: inline-block;
+  padding: 4px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  background-color: vars.$primary-color;
+  color: vars.$light-text;
+
+  &.default {
+    padding: 2px 8px;
+    font-size: 12px;
+  }
+  
+  &.large {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  &.secondary {
+    background-color: vars.$secondary-color-dark;
+    color: vars.$dark-text;
+  }
+}
+
+// Tag list styles
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+} 

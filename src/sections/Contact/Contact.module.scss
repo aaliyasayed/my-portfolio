@@ -1,0 +1,224 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.contact {
+  padding: 80px 0;
+  background-color: vars.$light-text;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  color: vars.$heading-color;
+  position: relative;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: vars.$primary-color;
+  }
+}
+
+.contactContent {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.contactInfo {
+  flex: 1;
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: vars.$heading-color;
+  }
+  
+  p {
+    color: vars.$text-color;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+}
+
+.infoItem {
+  display: flex;
+  margin-bottom: 25px;
+  
+
+  p {
+    margin: 0;
+  }
+}
+
+.infoIcon {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-color: vars.$secondary-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
+.socialLinks {
+  margin-top: 50px;
+}
+
+.contactForm {
+  flex: 1;
+  background-color: vars.$light-text;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: vars.$card-shadow;
+  position: relative;
+}
+
+.formGroup {
+  margin-bottom: 25px;
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: vars.$heading-color;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid vars.$border-color;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: vars.$primary-color;
+    }
+  }
+}
+
+.inputError {
+  border-color: vars.$primary-color !important;
+}
+
+.errorText {
+  color: vars.$primary-color;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.messageContainer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.successMessage, .errorMessage {
+  text-align: center;
+  padding: 40px 20px;
+  
+  img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: vars.$text-color;
+    line-height: 1.6;
+  }
+}
+
+.successMessage {
+  h3 {
+    color: #4CAF50;
+  }
+}
+
+.errorMessage {
+  h3 {
+    color: vars.$primary-color;
+  }
+}
+
+.formOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(vars.$light-text, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+}
+
+.disabledForm {
+  position: relative;
+  pointer-events: none;
+  
+  input, textarea, button {
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: vars.$breakpoint-md) {
+  .contactContent {
+    flex-direction: column;
+  }
+
+  .contactInfo, .contactForm {
+    width: 100%;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+} 

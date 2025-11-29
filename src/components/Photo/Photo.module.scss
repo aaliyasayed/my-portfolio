@@ -1,0 +1,44 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.image {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  // Add filter to align with primary color theme
+  filter: sepia(20%) hue-rotate(315deg) saturate(110%);
+  transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+  max-width: 100%;
+  height: auto;
+  filter: sepia(18%) hue-rotate(315deg) saturate(105%);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    filter: sepia(10%) hue-rotate(330deg) saturate(105%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: vars.$breakpoint-md) {
+  .container {
+    gap: 15px;
+  }
+  
+  .image {
+    max-width: 100%;
+  }
+} 

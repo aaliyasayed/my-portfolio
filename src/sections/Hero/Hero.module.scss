@@ -1,0 +1,269 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 vars.$spacing-xl;
+}
+
+.greeting {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: vars.$primary-color;
+    margin: 8px auto 0;
+  }
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  
+  span {
+    display: block;
+  }
+  
+  @media (max-width: vars.$breakpoint-md) {
+    font-size: 4rem;
+  }
+  
+  @media (max-width: vars.$breakpoint-sm) {
+    font-size: 3rem;
+  }
+}
+
+.title {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  height: 20px;
+  margin-bottom: 2rem;
+  position: relative;
+  perspective: 800px;
+}
+
+.titleText {
+  display: inline-block;
+  backface-visibility: hidden;
+  animation: flipIn 0.5s forwards;
+}
+
+.ctaButtons {
+  margin-top: 2rem;
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.scrollCircle {
+  position: relative;
+  width: 160px;
+  // height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: vars.$primary-color;
+  border-radius: 260px 260px 0 0;
+  overflow: hidden;
+  border-bottom: 0;
+  box-shadow: vars.$card-shadow;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
+.textCircle {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  animation: rotate 15s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: vars.$primary-color-dark;
+  
+  .circleText {
+    fill: none;
+    
+    text {
+      font-size: 8px;
+      letter-spacing: 3.4px;
+      fill: vars.$light-text;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.innerCircle {
+  width: 70px;
+  height: 70px;
+  background-color: vars.$light-text;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowDown {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: vars.$text-color;
+  color: vars.$light-text;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.backgroundDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  &::before {
+    background-image: radial-gradient(vars.$text-color-light 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+}
+
+.verticalLine {
+  width: 1px;
+  height: 120px;
+  background-color: vars.$primary-color;
+  margin: 0 auto 2rem;
+  position: absolute;
+  top: vars.$navbar-height;
+  left: 0;
+  right: 0;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: vars.$primary-color;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Animations */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatDotsLeft {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-5%) translateY(5%);
+  }
+  50% {
+    transform: translateX(-8%) translateY(-2%);
+  }
+  75% {
+    transform: translateX(-4%) translateY(-8%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes floatDotsRight {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(5%) translateY(-5%);
+  }
+  50% {
+    transform: translateX(8%) translateY(2%);
+  }
+  75% {
+    transform: translateX(4%) translateY(8%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOut {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+} 

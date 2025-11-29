@@ -1,0 +1,27 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+    color: vars.$primary-color;
+  }
+}
+
+.text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+} 

@@ -1,0 +1,80 @@
+@use 'sass:color';
+@use '../../styles/variables' as vars;
+
+.button {
+  padding: vars.$spacing-lg;
+  min-width: 180px;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  transition: all vars.$transition-speed ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  text-align: center;
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.medium {
+  padding: vars.$spacing-lg;
+  min-width: 180px;
+  font-size: 13px;
+
+  @media (max-width: vars.$breakpoint-md) {
+    min-width: auto;
+  }
+}
+
+.small {
+  padding: 12px 26px;
+  min-width: 80px;
+  font-size: 12px;
+} 
+
+.primary {
+  background-color: vars.$primary-color;
+  color: vars.$light-text;
+  border: 1px solid vars.$primary-color-dark;
+
+  &:hover {
+    background-color: vars.$primary-color-dark;
+  }
+}
+
+.secondary {
+  background-color: vars.$secondary-color;
+  color: vars.$text-color;
+  border: 1px solid vars.$secondary-color-dark;
+  
+  &:hover {
+    background-color: vars.$secondary-color-dark;
+  }
+}
+
+.link {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  color: vars.$primary-color;
+  text-decoration: underline;
+  padding: 0;
+  width: auto;
+
+  &:hover,  &:active {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    transform: none;
+  }
+}
+

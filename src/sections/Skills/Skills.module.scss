@@ -1,0 +1,24 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  margin-top: 50px;
+
+  @media (max-width: vars.$breakpoint-md) {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+} 

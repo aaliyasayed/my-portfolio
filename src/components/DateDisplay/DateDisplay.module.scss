@@ -1,0 +1,20 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.dateDisplay {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: vars.$secondary-text;
+  margin-top: 8px;
+}
+
+.icon {
+  display: inline-flex;
+  margin-right: 8px;
+  color: vars.$primary-color;
+}
+
+.text {
+  font-weight: 500;
+} 

@@ -1,0 +1,297 @@
+{
+  "navigation": [
+    { "id": "about", "label": "ABOUT ME", "href": "#about", "isHidden": false },
+    { "id": "skills", "label": "SKILLS", "href": "#skills", "isHidden": false },
+    {
+      "id": "experience",
+      "label": "EXPERIENCE",
+      "href": "#experience",
+      "isHidden": false
+    },
+    {
+      "id": "education",
+      "label": "EDUCATION",
+      "href": "#education",
+      "isHidden": false
+    }
+  ],
+  "education": {
+    "heading": "Education",
+    "subheading": "Academics and professional development",
+    "academics": [
+      {
+        "degree": "Master of Computer Applications (M.C.A.)",
+        "fieldOfStudy": "Web/Multimedia Management and Webmaster",
+        "school": "NMAMIT, Nitte",
+        "dateRange": "2014 - 2017",
+        "tags": [
+          "Web Development",
+          "Software Engineering",
+          "Database Management",
+          "System Design",
+          "Project Management"
+        ]
+      },
+      {
+        "degree": "Bachelor of Computer Applications (B.C.A.)",
+        "fieldOfStudy": "Computer Programming, Specific Applications",
+        "school": "Mangalore University",
+        "dateRange": "2010 - 2013",
+        "tags": [
+          "Web Development",
+          "Software Engineering",
+          "Database Management",
+          "System Design",
+          "Project Management"
+        ]
+      }
+    ]
+  },
+  "hero": {
+    "heading": "Aliya Sayed",
+    "greeting": "Hey there! I'm",
+    "titles": [
+      "FRONTEND DEVELOPER",
+      "WEB DEVELOPER",
+      "FREELANCER",
+      "MOTHER",
+      "WIFE",
+      "FRIEND"
+    ],
+    "scrollText": "SCROLL DOWN • SCROLL DOWN •",
+    "flipAnimationDuration": 500,
+    "titleChangeInterval": 3000,
+    "background": {
+      "image": "/bgs/desk.jpeg",
+      "isParallax": true,
+      "isAnimated": true
+    }
+  },
+  "experience": {
+    "heading": "Work Experience",
+    "subheading": "My professional journey",
+    "background": {
+      "image": "/bgs/keyboard.jpeg",
+      "isParallax": true,
+      "isAnimated": true
+    },
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "company": " Prism Technology",
+        "dateRange": "Apr 2024 - Present",
+        "location": "Remote - Abu Dhabi, UAE.",
+        "description": [
+          "Architected frontend systems for PrismConnect using React + Tailwind, establishing reusable UI components and scalable design patterns for Web Dashboard.",
+          "Built real-time operational dashboards using Firestore listeners and WebSockets to track technician locations, equipment allocation, and Gantt-based project timelines.",
+          "Delivered the Commissioning & Handover Module with multi-step checklists, geo-verification, image validation, and mobile-optimized workflows.",
+          "Developed modular data visualization components for SLA performance, predictive maintenance, and asset monitoring.",
+          "Integrated with microservices across Estimation, Logistics, and Commissioning, ensuring resilient API interaction, optimized caching, and smooth synchronization across SQL/NoSQL data layers.",
+          "Collaborated with design, product, and backend leads to translate business workflows into efficient, maintainable UI flows."
+        ],
+        "skills": [
+          "React",
+          "Tailwind",
+          "On Call",
+          "Jira",
+          "Figma",
+          "JavaScript",
+          "TypeScript",
+          "Hooks",
+          "Git",
+          "Agile Methodologies",
+          "AWS",
+          "CI/CD",
+          "Playwright",
+          "Jest",
+          "Selenium",
+          "Redux",
+          "Redux Toolkit",
+          "HTML",
+          "CSS",
+          "SCSS",
+          "Module CSS",
+          "Github co-pilot",
+          "Cursor AI"
+        ]
+      },
+      {
+        "title": "Software Engineer - L2",
+        "company": "ACKO",
+        "dateRange": "Jul 2022 - Mar 2024",
+        "location": "Remote - Bengaluru, Karnataka, India",
+        "description": [
+          "Owned the architecture and development of UI modules for a SaaS workflow platform, delivering clean, maintainable, and scalable code.",
+          "Built a Kanban board system using DnD Kit for intuitive, high-performance drag-and-drop workflows.",
+          "Implemented interactive UI flows and reusable component libraries in React to enhance accessibility and responsiveness.",
+          "Designed and rolled out micro-frontend architecture (Module Federation) enabling independent deployments and improved scalability.",
+          "Integrated React-Mentions and Camunda DMN modeller, expanding the platform's automation and decision intelligence capabilities.",
+          "Mentored junior developers, improved code quality processes, and led FE knowledge-sharing initiatives."
+        ],
+        "skills": [
+          "HTML/CSS & SCSS",
+          "React Hooks",
+          "Figma",
+          "Cloudinary",
+          "Grafana",
+          "Notion",
+          "JavaScript",
+          "TypeScript",
+          "Hooks",
+          "Git",
+          "Redux",
+          "Redux Thunk"
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Furlenco",
+        "dateRange": "Jan 2019 - May 2022",
+        "location": "Bengaluru, Karnataka, India",
+        "description": [
+          "Modernized consumer-facing Web/mWeb experiences to improve speed, consistency, and conversions.",
+          "Built reusable TDD-driven React components with CSS Modules for large-scale UI consistency.",
+          "Led migration from multi-page flows to a Single Page Application, improving customer engagement by 20%.",
+          "Partnered with UX, backend, and QA teams to deliver features rapidly while maintaining high engineering standards."
+        ],
+        "skills": [
+          "HTML/CSS & SCSS",
+          "React",
+          "React Hooks",
+          "Redux",
+          "Duck Design Pattern",
+          "Git",
+          "Agile Methodologies"
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Sigtuple (Mirable Health)",
+        "dateRange": "Jan 2018 - Dec 2018",
+        "location": "Bengaluru, Karnataka, India",
+        "description": [
+          "Developed UI components for healthcare analytics products using React, ensuring strong performance and responsiveness.",
+          "Supported Agile Scrum teams with regular sprint deliverables and stakeholder demos.",
+          "Standardized landing page design frameworks, improving brand consistency and reusability.",
+          "Conducted code reviews, maintained UI quality, and collaborated closely with designers."
+        ],
+        "skills": [
+          "HTML, CSS & SCSS",
+          "Webpack",
+          "React",
+          "Git",
+          "Node.js",
+          "Express"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "heading": "Hi! My name is Aliya Sayed",
+    "subheading": "I'm a senior software engineer based in India and UAE",
+    "imageUrl": "/photos/self.jpg",
+    "contactButtonText": "Say Hello",
+    "resumeUrl": "https://docs.google.com/document/d/1WHJO9YVNTXtPzliAs-2gzYsUjXzqC6mu/edit?usp=sharing&ouid=111555922904035072853&rtpof=true&sd=true",
+    "resumeButtonText": "My Resume",
+    "linkedin": "https://www.linkedin.com/in/aliya-sayed/",
+    "github": "https://github.com/aaliyasayed",
+    "whatsappNumber": "+91 8310737947",
+    "whatsappMessage": "Hi, I'd like to get in touch with you to discuss a project or collaboration.",
+    "titleTags": [
+      "React.js",
+      "Frontend Development",
+      "Full Stack JavaScript",
+      "UI Designing",
+      "Performance Optimization",
+      "SEO",
+      "TypeScript",
+      "Node.js",
+      "Redux"
+    ],
+    "aboutContent": "<p>Senior Software Engineer (Frontend) with 7.5+ years of experience building high-impact, scalable web applications using JavaScript, React.js, HTML5, and CSS.</p><p>Currently driving frontend innovation at PrismTech.ae, I specialize in crafting intuitive user interfaces and seamless user experiences with ReactJS and modern JavaScript frameworks. I have a proven track record of optimizing performance, enhancing workflows, and mentoring junior engineers to elevate team productivity. I thrive in fast-paced environments, consistently delivering polished solutions under tight deadlines.</p><p>My journey includes impactful stints at Acko, Furlenco, and Sigtuple, where I led frontend efforts across consumer and enterprise products. My tech toolkit includes React.js, Redux, TypeScript, SPA architecture, SCSS, Webpack, Node.js, Python, and robust testing frameworks.</p><p>Passionate about clean, scalable design systems and collaborative development, I'm always looking to build digital products that truly resonate with users.</p><p>Let's connect and build meaningful digital experiences together!</p>"
+  },
+  "skills": {
+    "heading": "My Skills",
+    "subheading": "What I can do",
+    "items": [
+      {
+        "title": "Frontend Development",
+        "percentage": 95,
+        "subtitle": "React.js • JavaScript • TypeScript • Next.js • Redux • HTML5 • CSS3 • SCSS • Electron",
+        "description": "Building responsive and interactive user interfaces with modern web technologies "
+      },
+      {
+        "title": "Backend Development",
+        "percentage": 70,
+        "subtitle": "Python • Node.js • PHP • MongoDB • MySQL • API Development",
+        "description": "Creating robust server-side applications and RESTful APIs"
+      },
+      {
+        "title": "UI/UX & Design",
+        "percentage": 85,
+        "subtitle": "UI Designing • Design Patterns • Responsive Design • UX Principles",
+        "description": "Crafting intuitive and visually appealing user experiences"
+      },
+      {
+        "title": "DevOps & Tools",
+        "percentage": 50,
+        "subtitle": "Git • Docker • CI/CD • Linux",
+        "description": "Implementing deployment pipelines and infrastructure management"
+      },
+      {
+        "title": "Testing & Quality Assurance",
+        "percentage": 65,
+        "subtitle": "Jest • Selenium • Pytest • Playwright • Debugging • Code Optimization • Jira",
+        "description": "Ensuring software reliability through comprehensive testing strategies"
+      },
+      {
+        "title": "Project Skills",
+        "percentage": 75,
+        "subtitle": "Agile • DevOps • Team Management • Technical Documentation • Project Delivery",
+        "description": "Leading teams and projects with effective methodologies"
+      },
+      {
+        "title": "Debugging & Troubleshooting",
+        "percentage": 90,
+        "subtitle": "Chrome DevTools • React DevTools • Redux DevTools • Logger Tools • Performance Profiling",
+        "description": "Identifying and resolving complex issues across the technology stack"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact Me",
+    "subheading": "Let's get in touch",
+    "getInTouchHeading": "Get In Touch",
+    "getInTouchText": "I'm always interested in new opportunities, collaborations, or just a friendly chat about technology. Feel free to reach out!",
+    "email": "aliya.sayed.dev@gmail.com",
+    "phone": "(UAE) +971 00 000 0000 <br /> (India & WhatsApp) +91 8310 73 7947",
+    "location": "Working remotely from India & UAE",
+    "formLabels": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "formButtons": {
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "formMessages": {
+      "success": {
+        "title": "Message Sent!",
+        "text": "Thank you for reaching out. I'll get back to you shortly."
+      },
+      "error": {
+        "title": "Submission Failed",
+        "text": "There was an error sending your message. Please try again later."
+      }
+    }
+  },
+  "seo": {
+    "title": "Aliya Sayed - Senior Software Engineer",
+    "description": "Senior Software Engineer with 7.5+ years of experience in React.js and frontend development. Portfolio showcasing projects and professional experience.",
+    "keywords": "Aliya Sayed, Software Engineer, Frontend Developer, React.js, TypeScript, JavaScript, Web Developer, India and UAE",
+    "author": "Aliya Sayed",
+    "ogImage": "https://media.licdn.com/dms/image/v2/D4E03AQEoe4d9TCJTvw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1665153352568?e=1751500800&v=beta&t=b2ipJFDbeItBJ6fdaVkpeMHxOOLrpBqPE46Xh4IYBv0"
+  }
+}

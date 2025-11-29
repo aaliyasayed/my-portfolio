@@ -1,0 +1,308 @@
+@use "sass:color";
+@use "../../styles/variables" as vars;
+
+.container {
+  display: flex;
+  gap: 70px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: vars.$breakpoint-lg) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+} 
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  
+  .imageWrapper {
+    position: relative;
+    width: 450px;
+    height: auto;
+    overflow: visible;
+    transition: transform 0.4s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: vars.$card-shadow;
+      filter: contrast(1.05);
+      transition: all 0.4s ease;
+      
+      .animate & {
+        animation: fadeIn 0.8s ease-out 0.2s forwards;
+      }
+    }
+    
+    @media (max-width: vars.$breakpoint-lg) {
+      width: 100%;
+      max-width: 450px;
+    }
+    
+    @media (max-width: vars.$breakpoint-md) {
+      max-width: 350px;
+    }
+  }
+  
+  .imageDecoration {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, vars.$primary-color-light, vars.$primary-color);
+    z-index: -1;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease-out 0.6s forwards;
+    
+    @media (max-width: vars.$breakpoint-md) {
+      width: 80px;
+      height: 80px;
+      right: -10px;
+      bottom: -10px;
+    }
+  }
+  
+  .imagePlaceholder {
+    width: 450px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: vars.$border-color;
+    border-radius: 10px;
+    
+    @media (max-width: vars.$breakpoint-lg) {
+      width: 100%;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-lg) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.experienceBadge {
+  position: absolute;
+  top: 40px;
+  right: -30px;
+  background: vars.$light-bg;
+  box-shadow: vars.$card-shadow;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeSlideLeft 0.6s ease-out 0.8s forwards;
+  
+  .years {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: vars.$primary-color;
+    line-height: 1;
+  }
+  
+  .text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: center;
+    color: vars.$text-color;
+  }
+  
+  @media (max-width: vars.$breakpoint-lg) {
+    top: initial;
+    bottom: 0;
+    right: 0;
+  }
+  
+  @media (max-width: vars.$breakpoint-sm) {
+    min-width: 100px;
+    padding: 10px;
+  }
+}
+
+.contentSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+  @media (max-width: vars.$breakpoint-lg) {
+    width: 100%;
+  }
+}
+
+.heading {
+  margin-bottom: 25px;
+  
+  .title {
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    
+    .animate &::after {
+      animation: expandWidth 0.6s ease-out 0.4s forwards;
+      width: 0;
+    }
+  }
+  
+  .subtitle {
+    color: vars.$text-color;
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+}
+
+.tags {
+  margin-top: 5px;
+  animation: fadeSlideUp 0.6s ease-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.divider {
+  background-color: vars.$border-color;
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: vars.$primary-color-light;
+    opacity: 0.6;
+    transition: width 0.5s ease;
+  }
+  
+  .animate &::after {
+    animation: expandWidth 0.8s ease-out 0.7s forwards;
+  }
+}
+
+.description {
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: vars.$text-color;
+  opacity: 0;
+  transform: translateY(10px);
+  
+  .animate & {
+    animation: fadeSlideUp 0.6s ease-out 0.8s forwards;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+  
+  .animate & {
+    animation: fadeSlideUp 0.6s ease-out 1s forwards;
+  }
+  
+  @media (max-width: vars.$breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.socialButtons {
+  margin-top: 1.8rem;
+  opacity: 0;
+  
+  .animate & {
+    animation: fadeSlideUp 0.6s ease-out 1.2s forwards;
+  }
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40%;
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
