@@ -29,8 +29,8 @@ export const sendEmailNotification = async (
 ): Promise<void> => {
   const emailData = {
     sender: {
-      name: "Aliya Sayed - Contact Form",
-      email: "aliya.sayed.dev@gmail.com",
+      name: "Contact Form",
+      email: "contact-form@aaliyasayed.com",
     },
     replyTo: {
       email: formData.email,
@@ -42,7 +42,7 @@ export const sendEmailNotification = async (
         name: "Aliya Sayed",
       },
     ],
-    subject: `Contact Form: ${formData.subject}`,
+    subject: `${formData.subject}`,
     htmlContent: generateEmailTemplate(formData),
     headers: {
       charset: "utf-8",
