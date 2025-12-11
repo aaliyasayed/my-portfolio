@@ -205,6 +205,8 @@ export const Contact = () => {
                 styles.messageContainer,
                 styles.successMessage
               )}
+              role="status"
+              aria-live="polite"
             >
               <img src="/icons/success.svg" alt="Success" />
               <h3>{contact.formMessages.success.title}</h3>
@@ -218,6 +220,8 @@ export const Contact = () => {
                 styles.messageContainer,
                 styles.errorMessage
               )}
+              role="alert"
+              aria-live="assertive"
             >
               <img src="/icons/error.svg" alt="Error" />
               <h3>{contact.formMessages.error.title}</h3>
@@ -256,9 +260,17 @@ export const Contact = () => {
                     [styles.inputError]: formErrors.name,
                   })}
                   disabled={isLoading}
+                  aria-invalid={!!formErrors.name}
+                  aria-describedby={formErrors.name ? "name-error" : undefined}
                 />
                 {formErrors.name && (
-                  <div className={styles.errorText}>{formErrors.name}</div>
+                  <div
+                    id="name-error"
+                    className={styles.errorText}
+                    role="alert"
+                  >
+                    {formErrors.name}
+                  </div>
                 )}
               </div>
 
@@ -276,9 +288,19 @@ export const Contact = () => {
                     [styles.inputError]: formErrors.email,
                   })}
                   disabled={isLoading}
+                  aria-invalid={!!formErrors.email}
+                  aria-describedby={
+                    formErrors.email ? "email-error" : undefined
+                  }
                 />
                 {formErrors.email && (
-                  <div className={styles.errorText}>{formErrors.email}</div>
+                  <div
+                    id="email-error"
+                    className={styles.errorText}
+                    role="alert"
+                  >
+                    {formErrors.email}
+                  </div>
                 )}
               </div>
 
@@ -296,9 +318,19 @@ export const Contact = () => {
                     [styles.inputError]: formErrors.subject,
                   })}
                   disabled={isLoading}
+                  aria-invalid={!!formErrors.subject}
+                  aria-describedby={
+                    formErrors.subject ? "subject-error" : undefined
+                  }
                 />
                 {formErrors.subject && (
-                  <div className={styles.errorText}>{formErrors.subject}</div>
+                  <div
+                    id="subject-error"
+                    className={styles.errorText}
+                    role="alert"
+                  >
+                    {formErrors.subject}
+                  </div>
                 )}
               </div>
 
@@ -316,9 +348,19 @@ export const Contact = () => {
                     [styles.inputError]: formErrors.message,
                   })}
                   disabled={isLoading}
+                  aria-invalid={!!formErrors.message}
+                  aria-describedby={
+                    formErrors.message ? "message-error" : undefined
+                  }
                 ></textarea>
                 {formErrors.message && (
-                  <div className={styles.errorText}>{formErrors.message}</div>
+                  <div
+                    id="message-error"
+                    className={styles.errorText}
+                    role="alert"
+                  >
+                    {formErrors.message}
+                  </div>
                 )}
               </div>
 

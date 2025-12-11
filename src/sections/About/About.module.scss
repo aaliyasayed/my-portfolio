@@ -7,7 +7,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  
+
   &.animate {
     opacity: 1;
     transform: translateY(0);
@@ -18,7 +18,7 @@
     align-items: center;
     gap: 40px;
   }
-} 
+}
 
 .imageSection {
   display: flex;
@@ -26,18 +26,34 @@
   align-items: flex-start;
   position: relative;
   flex-shrink: 0;
-  
-  .imageWrapper {
+
+  .imageStack {
     position: relative;
     width: 450px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: vars.$breakpoint-lg) {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    @media (max-width: vars.$breakpoint-md) {
+      max-width: 350px;
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
     height: auto;
     overflow: visible;
     transition: transform 0.4s ease;
-    
+
     &:hover {
       transform: translateY(-5px);
     }
-    
+
     img {
       width: 100%;
       height: auto;
@@ -47,22 +63,22 @@
       box-shadow: vars.$card-shadow;
       filter: contrast(1.05);
       transition: all 0.4s ease;
-      
+
       .animate & {
         animation: fadeIn 0.8s ease-out 0.2s forwards;
       }
     }
-    
+
     @media (max-width: vars.$breakpoint-lg) {
       width: 100%;
       max-width: 450px;
     }
-    
+
     @media (max-width: vars.$breakpoint-md) {
       max-width: 350px;
     }
   }
-  
+
   .imageDecoration {
     position: absolute;
     right: -20px;
@@ -70,11 +86,15 @@
     width: 120px;
     height: 120px;
     border-radius: 8px;
-    background: linear-gradient(135deg, vars.$primary-color-light, vars.$primary-color);
+    background: linear-gradient(
+      135deg,
+      vars.$primary-color-light,
+      vars.$primary-color
+    );
     z-index: -1;
     opacity: 0;
     animation: fadeSlideUp 0.6s ease-out 0.6s forwards;
-    
+
     @media (max-width: vars.$breakpoint-md) {
       width: 80px;
       height: 80px;
@@ -82,7 +102,7 @@
       bottom: -10px;
     }
   }
-  
+
   .imagePlaceholder {
     width: 450px;
     height: 500px;
@@ -91,7 +111,7 @@
     justify-content: center;
     background-color: vars.$border-color;
     border-radius: 10px;
-    
+
     @media (max-width: vars.$breakpoint-lg) {
       width: 100%;
       height: 400px;
@@ -106,7 +126,7 @@
 
 .experienceBadge {
   position: absolute;
-  top: 40px;
+  top: 25px;
   right: -30px;
   background: vars.$light-bg;
   box-shadow: vars.$card-shadow;
@@ -120,14 +140,14 @@
   opacity: 0;
   transform: translateX(20px);
   animation: fadeSlideLeft 0.6s ease-out 0.8s forwards;
-  
+
   .years {
     font-size: 1.6rem;
     font-weight: 700;
     color: vars.$primary-color;
     line-height: 1;
   }
-  
+
   .text {
     font-size: 0.7rem;
     font-weight: 500;
@@ -135,13 +155,15 @@
     text-align: center;
     color: vars.$text-color;
   }
-  
+
   @media (max-width: vars.$breakpoint-lg) {
-    top: initial;
-    bottom: 0;
-    right: 0;
+    top: 25px;
+    right: -30px;
+    left: auto;
+    bottom: auto;
+    transform: none;
   }
-  
+
   @media (max-width: vars.$breakpoint-sm) {
     min-width: 100px;
     padding: 10px;
@@ -152,7 +174,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  
+
   @media (max-width: vars.$breakpoint-lg) {
     width: 100%;
   }
@@ -160,18 +182,18 @@
 
 .heading {
   margin-bottom: 25px;
-  
+
   .title {
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
-    
+
     .animate &::after {
       animation: expandWidth 0.6s ease-out 0.4s forwards;
       width: 0;
     }
   }
-  
+
   .subtitle {
     color: vars.$text-color;
     margin-top: 15px;
@@ -193,9 +215,9 @@
   height: 1px;
   margin: 30px 0;
   position: relative;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -205,7 +227,7 @@
     opacity: 0.6;
     transition: width 0.5s ease;
   }
-  
+
   .animate &::after {
     animation: expandWidth 0.8s ease-out 0.7s forwards;
   }
@@ -217,14 +239,14 @@
   color: vars.$text-color;
   opacity: 0;
   transform: translateY(10px);
-  
+
   .animate & {
     animation: fadeSlideUp 0.6s ease-out 0.8s forwards;
   }
-  
+
   p {
     margin-bottom: 15px;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -235,11 +257,11 @@
   display: flex;
   gap: 15px;
   opacity: 0;
-  
+
   .animate & {
     animation: fadeSlideUp 0.6s ease-out 1s forwards;
   }
-  
+
   @media (max-width: vars.$breakpoint-sm) {
     flex-direction: column;
   }
@@ -248,7 +270,7 @@
 .socialButtons {
   margin-top: 1.8rem;
   opacity: 0;
-  
+
   .animate & {
     animation: fadeSlideUp 0.6s ease-out 1.2s forwards;
   }

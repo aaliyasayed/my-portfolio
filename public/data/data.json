@@ -54,6 +54,7 @@
       "FRONTEND DEVELOPER",
       "WEB DEVELOPER",
       "FREELANCER",
+      "GAMER",
       "MOTHER",
       "WIFE",
       "FRIEND"
@@ -62,7 +63,7 @@
     "flipAnimationDuration": 500,
     "titleChangeInterval": 3000,
     "background": {
-      "image": "/bgs/desk.jpeg",
+      "image": "/bgs/desk.jpg",
       "isParallax": true,
       "isAnimated": true
     }
@@ -71,7 +72,7 @@
     "heading": "Work Experience",
     "subheading": "My professional journey",
     "background": {
-      "image": "/bgs/keyboard.jpeg",
+      "image": "/bgs/ipad.jpg",
       "isParallax": true,
       "isAnimated": true
     },

@@ -19,32 +19,33 @@ const platformIcons = {
 };
 
 // Single social icon component
-const SocialIcon = ({ 
-  platform, 
-  href 
-}: { 
-  platform: 'linkedin' | 'github' | 'codepen'; 
+const SocialIcon = ({
+  platform,
+  href
+}: {
+  platform: 'linkedin' | 'github' | 'codepen';
   href: string;
 }) => {
   const { trackCtaClick } = useTracking();
-  
+
   if (!href) return null;
-  
+
   const handleClick = () => {
     trackCtaClick(`social-${platform}`, 'link');
   };
-  
+
   return (
-    <a 
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.socialIcon}
+      aria-label={platform}
       onClick={handleClick}
     >
-      <img 
-        src={platformIcons[platform]} 
-        alt={platform} 
+      <img
+        src={platformIcons[platform]}
+        alt={platform}
         className={styles.icon}
       />
     </a>
@@ -62,25 +63,25 @@ export function SocialButtons({
   const { about } = useData();
   const { trackCtaClick } = useTracking();
   const hasAnySocial = linkedin || github || codepen || whatsappNumber;
-  
+
   if (!hasAnySocial) return null;
 
   // Format WhatsApp URL
-  const whatsappUrl = whatsappNumber 
+  const whatsappUrl = whatsappNumber
     ? `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(about.whatsappMessage || '')}`
     : '';
-  
+
   const handleWhatsAppClick = () => {
     trackCtaClick('social-whatsapp', 'button');
   };
-  
+
   return (
     <div className={`${styles.socialButtons} ${className || ''}`}>
       {linkedin && <SocialIcon platform="linkedin" href={linkedin} />}
       {github && <SocialIcon platform="github" href={github} />}
       {codepen && <SocialIcon platform="codepen" href={codepen} />}
       {whatsappNumber && (
-        <Button 
+        <Button
           target="_blank"
           rel="noopener noreferrer"
           href={whatsappUrl}
@@ -88,6 +89,7 @@ export function SocialButtons({
           size="small"
           className={styles.whatsappButton}
           onClick={handleWhatsAppClick}
+          aria-label="Open WhatsApp chat"
         >
           <img src="/icons/whatsapp.svg" alt="WhatsApp" className={styles.icon} />
           <span>WhatsApp</span>
@@ -95,4 +97,4 @@ export function SocialButtons({
       )}
     </div>
   );
-} 
+}

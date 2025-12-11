@@ -41,20 +41,22 @@ export const About = () => {
         ref={sectionRef}
       >
         <div className={styles.imageSection}>
-          {about.imageUrl && about.imageUrl.trim() !== "" ? (
-            <div className={styles.imageWrapper}>
-              <Photo customImage={about.imageUrl} />
-              <div className={styles.imageDecoration}></div>
-            </div>
-          ) : (
-            <div className={styles.imagePlaceholder}>
-              <span>Profile Image</span>
-            </div>
-          )}
+          <div className={styles.imageStack}>
+            {about.imageUrl && about.imageUrl.trim() !== "" ? (
+              <div className={styles.imageWrapper}>
+                <Photo customImage={about.imageUrl} />
+                <div className={styles.imageDecoration}></div>
+              </div>
+            ) : (
+              <div className={styles.imagePlaceholder}>
+                <span>Profile Image</span>
+              </div>
+            )}
 
-          <div className={styles.experienceBadge}>
-            <span className={styles.years}>7.5+</span>
-            <span className={styles.text}>Years of Experience</span>
+            <div className={styles.experienceBadge}>
+              <span className={styles.years}>7.5+</span>
+              <span className={styles.text}>Years of Experience</span>
+            </div>
           </div>
         </div>
 

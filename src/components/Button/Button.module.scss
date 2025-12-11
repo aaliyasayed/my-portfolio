@@ -1,5 +1,5 @@
-@use 'sass:color';
-@use '../../styles/variables' as vars;
+@use "sass:color";
+@use "../../styles/variables" as vars;
 
 .button {
   padding: vars.$spacing-lg;
@@ -19,9 +19,15 @@
   &:hover {
     transform: translateY(-1px);
   }
-  
+
   &:active {
     transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid vars.$primary-color;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px color.scale(vars.$primary-color, $alpha: -60%);
   }
 }
 
@@ -39,7 +45,7 @@
   padding: 12px 26px;
   min-width: 80px;
   font-size: 12px;
-} 
+}
 
 .primary {
   background-color: vars.$primary-color;
@@ -52,12 +58,15 @@
 }
 
 .secondary {
-  background-color: vars.$secondary-color;
-  color: vars.$text-color;
-  border: 1px solid vars.$secondary-color-dark;
-  
+  background-color: transparent;
+  color: vars.$primary-color;
+  border: 2px solid vars.$primary-color;
+  font-weight: 500;
+
   &:hover {
-    background-color: vars.$secondary-color-dark;
+    background-color: vars.$primary-color;
+    color: vars.$light-text;
+    box-shadow: 0 4px 12px rgba(197, 103, 64, 0.25);
   }
 }
 
@@ -70,11 +79,11 @@
   padding: 0;
   width: auto;
 
-  &:hover,  &:active {
+  &:hover,
+  &:active {
     background-color: transparent;
     box-shadow: none;
     border: none;
     transform: none;
   }
 }
-

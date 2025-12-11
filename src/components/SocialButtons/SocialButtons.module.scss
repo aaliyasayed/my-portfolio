@@ -14,16 +14,26 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f5f5f5;
-  transition: all 0.2s ease;
-  
+  background-color: vars.$light-bg;
+  border: 1px solid rgba(42, 58, 64, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover {
-    background-color: #e0e0e0;
+    background-color: vars.$primary-color;
+    border-color: vars.$primary-color;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(197, 103, 64, 0.25);
+
+    .icon {
+      filter: brightness(0) invert(1);
+    }
   }
-  
+
   .icon {
     width: 18px;
     height: 18px;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(1200%) hue-rotate(160deg) brightness(95%) contrast(88%);
+    transition: filter 0.3s ease;
   }
 }
 
@@ -34,12 +44,20 @@
   border-radius: 50px !important;
   border: none !important;
   transform: none !important;
-  
+  background-color: vars.$primary-color !important;
+  color: vars.$light-text !important;
+
+  &:hover {
+    background-color: vars.$primary-color-dark !important;
+    box-shadow: 0 4px 12px rgba(197, 103, 64, 0.3) !important;
+  }
+
   .icon {
     width: 18px;
     height: 18px;
+    filter: brightness(0) invert(1);
   }
-  
+
   span {
     font-weight: 500;
   }
