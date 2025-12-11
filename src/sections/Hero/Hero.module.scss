@@ -324,6 +324,12 @@
     width: 20px;
     height: 20px;
   }
+
+  &:hover {
+    background: vars.$primary-color;
+    color: vars.$light-text;
+    box-shadow: 0 6px 25px rgba(197, 103, 64, 0.4);
+  }
 }
 
 // Animations
