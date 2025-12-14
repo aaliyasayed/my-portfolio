@@ -7,14 +7,22 @@ export const Navbar = memo(() => {
   const { activeSection, navigateTo, navItems } = useNavigation();
   const { trackCtaClick } = useTracking();
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Memoize scroll handler to prevent recreation on each render
   const handleScroll = useCallback(() => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
+    const scrollY = window.scrollY;
+    const hideThreshold = 100; // Hide navbar when scrolled less than 100px
+
+    // Hide navbar when at the top (in hero section)
+    if (scrollY < hideThreshold) {
+      setIsVisible(false);
       setScrolled(false);
+    } else {
+      // Show navbar after scrolling down
+      setIsVisible(true);
+      setScrolled(true);
     }
   }, []);
 
@@ -58,7 +66,11 @@ export const Navbar = memo(() => {
   );
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
+    <nav
+      className={`${styles.navbar} ${scrolled ? styles.scrolled : ""} ${
+        !isVisible ? styles.hidden : ""
+      }`}
+    >
       <div className={styles.logo}>
         <a href="#home" onClick={handleHomeClick}>
           <img src="/icons/home.svg" alt="Home" width="24" height="24" />

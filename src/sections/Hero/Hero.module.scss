@@ -92,8 +92,14 @@
   z-index: 2;
   text-align: center;
   max-width: 900px;
+  width: 100%;
   padding: 0 vars.$spacing-xl;
+  margin: 0 auto;
   animation: fadeInUp 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 // Greeting
@@ -103,7 +109,7 @@
   align-items: center;
   justify-content: center;
   gap: vars.$spacing-md;
-  margin-bottom: vars.$spacing-lg;
+  margin-bottom: vars.$spacing-xxl;
   font-size: 0.875rem;
   letter-spacing: 3px;
   font-weight: 500;
@@ -157,7 +163,7 @@
   font-size: clamp(4rem, 9vw, 8rem);
   font-weight: 400;
   line-height: 1.35;
-  margin-bottom: vars.$spacing-lg;
+  margin-bottom: vars.$spacing-xxl;
   letter-spacing: 0px;
   padding: 0.2em 0.1em; // Add padding to prevent text cropping
   overflow: visible; // Ensure text is not clipped
@@ -275,6 +281,16 @@
   &:focus-visible {
     outline: 2px solid vars.$primary-color;
     outline-offset: 6px;
+  }
+
+  // scroll indicator position for mobile & tablet
+
+  @media (max-width: vars.$breakpoint-md) {
+    bottom: vars.$spacing-md;
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    bottom: vars.$spacing-sm;
   }
 }
 

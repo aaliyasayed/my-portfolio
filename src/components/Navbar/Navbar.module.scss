@@ -25,6 +25,22 @@
     -webkit-backdrop-filter: blur(30px);
     border-bottom-color: rgba(147, 218, 215, 0.1);
   }
+
+  &.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: vars.$breakpoint-md) {
+    height: 70px;
+    padding: 0 vars.$spacing-md;
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    height: 65px;
+    padding: 0 vars.$spacing-sm;
+  }
 }
 
 .logo {
@@ -43,7 +59,7 @@
   font-weight: bold;
   color: white;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(147, 218, 215, 0.2);
+  box-shadow: 0 6px 20px rgba(197, 103, 64, 0.4);
   position: relative;
   overflow: hidden;
 
@@ -76,12 +92,14 @@
     img {
       filter: brightness(0) invert(1);
       transition: transform 0.3s ease;
+      width: 24px;
+      height: 24px;
     }
   }
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(147, 218, 215, 0.4);
+    box-shadow: 0 6px 20px rgba(197, 103, 64, 0.4);
 
     &::before {
       left: 100%;
@@ -94,6 +112,28 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  @media (max-width: vars.$breakpoint-md) {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+
+    a img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+
+    a img {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -150,11 +190,17 @@
     &.active {
       a {
         color: vars.$primary-color;
-        // background-color: rgba(147, 218, 215, 0.15);
+        font-weight: 600;
+        // No underline for active items, only on hover
 
         &::before {
-          width: 80%;
-          background: vars.$primary-color;
+          width: 0;
+        }
+
+        &:hover {
+          &::before {
+            width: 80%;
+          }
         }
       }
     }
@@ -163,7 +209,7 @@
   @media (max-width: vars.$breakpoint-md) {
     position: fixed;
     flex-direction: column;
-    top: vars.$navbar-height;
+    top: 70px;
     left: 0;
     right: 0;
     background: rgba(26, 26, 26, 0.98);
@@ -239,7 +285,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(147, 218, 215, 0.2);
+  box-shadow: 0 6px 20px rgba(197, 103, 64, 0.4);
   position: relative;
   overflow: hidden;
 
@@ -272,12 +318,14 @@
     img {
       filter: brightness(0) invert(1);
       transition: transform 0.3s ease;
+      width: 24px;
+      height: 24px;
     }
   }
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(147, 218, 215, 0.4);
+    box-shadow: 0 6px 20px rgba(197, 103, 64, 0.4);
 
     &::before {
       left: 100%;
@@ -290,6 +338,28 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  @media (max-width: vars.$breakpoint-md) {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+
+    a img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+
+    a img {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -342,6 +412,43 @@
 
   @media (max-width: vars.$breakpoint-md) {
     display: flex;
+    width: 36px;
+    height: 32px;
+    padding: 6px;
+
+    span {
+      height: 2.5px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    width: 32px;
+    height: 28px;
+    padding: 5px;
+
+    span {
+      height: 2px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+    }
   }
 
   &:focus-visible {

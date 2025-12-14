@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "../../styles/variables" as vars;
+
 .backgroundContainer {
   position: absolute;
   top: 0;
@@ -7,10 +8,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  // Subtle overlay that matches Hero gradient and loader background
+  // Uses a light tint that blends with both Hero's gradient and loader's light-bg
   background-color: rgba(74, 74, 74, 0.15);
-  // background-color: rgb(147 218 215 / 20%);
-  // background-color: #faf3e0;
-  // background-color: rgba(204, 122, 87, 0.3);
 }
 .background {
   position: absolute;
