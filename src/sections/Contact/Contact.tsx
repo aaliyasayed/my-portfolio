@@ -170,7 +170,7 @@ export const Contact = () => {
                 <img src="/icons/phone.svg" alt="Phone" />
               </div>
               <div>
-                <h4>Phone</h4>
+                <h4>Phone & WhatsApp</h4>
                 <p dangerouslySetInnerHTML={{ __html: contact.phone }} />
               </div>
             </div>

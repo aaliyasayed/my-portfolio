@@ -209,7 +209,7 @@
   @media (max-width: vars.$breakpoint-md) {
     position: fixed;
     flex-direction: column;
-    top: 70px;
+    top: 64px;
     left: 0;
     right: 0;
     background: rgba(26, 26, 26, 0.98);
@@ -422,11 +422,11 @@
 
     &.active {
       span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg);
+        transform: translateY(8.5px) rotate(45deg);
       }
 
       span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg);
+        transform: translateY(-8.5px) rotate(-45deg);
       }
     }
   }

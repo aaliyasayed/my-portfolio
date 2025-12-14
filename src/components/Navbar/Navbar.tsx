@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, memo } from "react";
+import { useState, useEffect, useCallback, memo, useRef } from "react";
 import styles from "./Navbar.module.scss";
 import { useNavigation } from "../../context/NavigationContext";
 import { useTracking } from "../../hooks/useTracking";
@@ -9,6 +9,7 @@ export const Navbar = memo(() => {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navbarRef = useRef<HTMLElement>(null);
 
   // Memoize scroll handler to prevent recreation on each render
   const handleScroll = useCallback(() => {
@@ -30,6 +31,27 @@ export const Navbar = memo(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target as Node)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   // Memoize click handlers
   const toggleMobileMenu = useCallback(() => {
@@ -67,6 +89,7 @@ export const Navbar = memo(() => {
 
   return (
     <nav
+      ref={navbarRef}
       className={`${styles.navbar} ${scrolled ? styles.scrolled : ""} ${
         !isVisible ? styles.hidden : ""
       }`}
