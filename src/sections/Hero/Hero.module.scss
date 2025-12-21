@@ -12,12 +12,19 @@
   background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f4f8 100%);
   padding-bottom: 120px; // Ensure space for scroll indicator
 
+  // Use dynamic viewport height on mobile/tablet to account for browser UI
   @media (max-width: vars.$breakpoint-md) {
-    padding-bottom: 100px; // Space for scroll indicator on tablet
+    height: 100vh; // Fallback for browsers that don't support dvh
+    height: 100dvh; // Dynamic viewport height accounts for browser UI
+    // Extra padding to ensure scroll indicator is always visible above browser UI
+    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
   }
 
   @media (max-width: vars.$breakpoint-sm) {
-    padding-bottom: 90px; // Space for scroll indicator on mobile
+    height: 100vh; // Fallback for browsers that don't support dvh
+    height: 100dvh; // Dynamic viewport height accounts for browser UI
+    // Extra padding to ensure scroll indicator is always visible above browser UI
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
   }
 
   &::before {
@@ -301,8 +308,9 @@
   border: none;
   background: transparent;
   z-index: 3;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, bottom 0.3s ease;
   animation: bounce 2s ease-in-out infinite;
+  will-change: transform; // Optimize animation performance
 
   &:hover {
     transform: translateX(-50%) translateY(-5px);
@@ -322,12 +330,14 @@
   }
 
   // scroll indicator position for mobile & tablet
+  // Use fixed bottom value to prevent flicker from safe-area-inset-bottom changes
+  // The safe-area-inset-bottom can change during scroll causing animation lag
   @media (max-width: vars.$breakpoint-md) {
-    bottom: vars.$spacing-lg;
+    bottom: 80px; // Fixed value - adjust as needed for your device
   }
 
   @media (max-width: vars.$breakpoint-sm) {
-    bottom: vars.$spacing-md;
+    bottom: 10px; // Fixed value - user adjusted to 10px which works for their device
   }
 }
 
