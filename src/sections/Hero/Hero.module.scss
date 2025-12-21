@@ -308,9 +308,9 @@
   border: none;
   background: transparent;
   z-index: 3;
-  transition: transform 0.3s ease, bottom 0.3s ease;
+  transition: transform 0.3s ease; //, bottom 0.3s ease;
   animation: bounce 2s ease-in-out infinite;
-  will-change: transform; // Optimize animation performance
+  // will-change: transform; // Optimize animation performance
 
   &:hover {
     transform: translateX(-50%) translateY(-5px);
