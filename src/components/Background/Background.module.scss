@@ -10,7 +10,8 @@
   overflow: hidden;
   // Subtle overlay that matches Hero gradient and loader background
   // Uses a light tint that blends with both Hero's gradient and loader's light-bg
-  background-color: rgba(74, 74, 74, 0.15);
+  // background-color: rgba(74, 74, 74, 0.15);
+  background-color: rgb(197 103 64 / 10%);
 }
 .background {
   position: absolute;

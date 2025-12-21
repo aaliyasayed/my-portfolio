@@ -10,6 +10,15 @@
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f4f8 100%);
+  padding-bottom: 120px; // Ensure space for scroll indicator
+
+  @media (max-width: vars.$breakpoint-md) {
+    padding-bottom: 100px; // Space for scroll indicator on tablet
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    padding-bottom: 90px; // Space for scroll indicator on mobile
+  }
 
   &::before {
     content: "";
@@ -91,7 +100,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 900px;
+  // max-width: 900px;
   width: 100%;
   padding: 0 vars.$spacing-xl;
   margin: 0 auto;
@@ -100,6 +109,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto; // Prevent content from taking too much space
+  max-height: calc(100vh - 150px); // Reserve space for scroll indicator
+  overflow: visible;
+
+  @media (max-width: vars.$breakpoint-md) {
+    max-height: calc(
+      100vh - 130px
+    ); // Reserve space for scroll indicator on tablet
+    padding: 0 vars.$spacing-lg;
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    max-height: calc(
+      100vh - 120px
+    ); // Reserve space for scroll indicator on mobile
+    padding: 0 vars.$spacing-md;
+  }
 }
 
 // Greeting
@@ -115,6 +141,8 @@
   font-weight: 500;
   text-transform: uppercase;
   color: vars.$text-color-light;
+  width: 100%;
+  text-align: center;
 
   @media (max-width: vars.$breakpoint-md) {
     font-size: 0.75rem;
@@ -160,7 +188,7 @@
 // Heading
 .heading {
   font-family: "Great Vibes", cursive;
-  font-size: clamp(4rem, 9vw, 8rem);
+  font-size: clamp(5rem, 14vw, 9rem);
   font-weight: 400;
   line-height: 1.35;
   margin-bottom: vars.$spacing-xxl;
@@ -168,13 +196,14 @@
   padding: 0.2em 0.1em; // Add padding to prevent text cropping
   overflow: visible; // Ensure text is not clipped
   position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: vars.$breakpoint-md) {
-    font-size: clamp(
-      3.5rem,
-      12vw,
-      5rem
-    ); // Slightly larger to highlight on mobile
+    font-size: clamp(4.5rem, 14vw, 6.5rem); // Increased font size for mobile
     letter-spacing: 0px;
     padding: 0.15em 0.15em;
   }
@@ -213,6 +242,8 @@
   justify-content: center;
   margin-bottom: vars.$spacing-xl;
   min-height: 60px;
+  width: 100%;
+  text-align: center;
 
   @media (max-width: vars.$breakpoint-md) {
     min-height: 50px;
@@ -247,6 +278,13 @@
   transform-style: preserve-3d;
   animation: flipIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  text-align: center;
+  width: fit-content;
 }
 
 // Modern Scroll Indicator
@@ -284,13 +322,12 @@
   }
 
   // scroll indicator position for mobile & tablet
-
   @media (max-width: vars.$breakpoint-md) {
-    bottom: vars.$spacing-md;
+    bottom: vars.$spacing-lg;
   }
 
   @media (max-width: vars.$breakpoint-sm) {
-    bottom: vars.$spacing-sm;
+    bottom: vars.$spacing-md;
   }
 }
 
